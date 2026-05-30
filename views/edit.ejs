@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="w-screen min-h-screen bg-[#222222] text-[#eeeeee] p-10">
+        <a href="/" class="inline-block bg-[#eeeeee] text-[#222222] rounded-2xl mb-4 px-4 py-2">Go back</a>
+        <form action="/edit" method="post" class="">
+            <input class="block px-5 w-full rounded-xl outline-none py-2 bg-zinc-900 " type="text" id="previous"
+                placeholder="Title for memo" name="previous" value="<%= filename.split(".")[0].split("-").join(" ")  %>">
+            <label class="font-light text-sm text-[#cccccc] tracking-wide inline-block px-2 mt-2" for="new">Enter new name</label>
+            <input class="block mt-1 px-5 w-full rounded-xl outline-none py-2 bg-zinc-900 " type="text" id="new"
+                placeholder="New title for memo" name="new" >
+            <label class="font-light text-sm text-[#cccccc] tracking-wide inline-block px-2 py-1 mt-4" for="details">Enter your new details</label>
+            <textarea class="block px-5 w-full h-36 rounded-xl outline-none py-2 bg-zinc-900 resize-none"
+                id="details" placeholder="Write your new details here" name="newDetails"><%= filedata %></textarea>
+            <input class="block bg-[#eeeeee] text-[#222222] rounded-2xl mt-4 px-4 py-2 cursor-pointer " type="submit"
+                value="Update memo">
+        </form>
+    </div>
+</body>
+
+</html>

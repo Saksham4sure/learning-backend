@@ -13,8 +13,10 @@
     <div class="w-screen min-h-screen bg-[#222222] text-[#eeeeee]">
         <div class="form px-28 py-10">
             <form action="/create" method="post" class="">
+                <label class="font-light text-sm text-[#cccccc] tracking-wide inline-block px-2 py-1" for="title">Enter memo name</label>
                 <input class="block px-5 w-full rounded-xl outline-none py-2 bg-zinc-900 " type="text" id="title"
                     placeholder="Title for memo" name="title">
+                <label class="font-light text-sm text-[#cccccc] tracking-wide inline-block mt-4 px-2 py-1" for="details">Enter your details</label>
                 <textarea class="block px-5 w-full h-36 rounded-xl outline-none mt-1 py-2 bg-zinc-900 resize-none"
                     id="details" placeholder="Write your details here" name="text"></textarea>
                 <input class="block bg-[#eeeeee] text-[#222222] rounded-2xl mt-4 px-4 py-2 cursor-pointer " type="submit"
@@ -25,8 +27,11 @@
             <% if(files.length > 0){ %>
                 <% files.forEach((e) => { %>
                     <div class="task w-72 px-4 py-2 bg-zinc-800 rounded-xl">
-                        <h1 class="text-2xl tracking-tighter capitalize"><%= e.split(".")[0].split("-").join(" ") %></h1>
-                        <a href="/file/<%= e %>" class="text-blue-400 inline-block px-2">Read more...</a>
+                        <h1 class="text-2xl font-semibold tracking-tighter capitalize"><%= e.split(".")[0].split("-").join(" ") %></h1>
+                        <div class="flex gap-2 w-full items-center justify-center">
+                            <a href="/file/<%= e %>" class="border border-[#eeeeee] text-[#eeeeee] rounded-2xl mt-4 px-4 py-2 cursor-pointer ">Read more...</a>
+                            <a href="/edit/<%= e %>" class="bg-[#eeeeee] text-[#222222] rounded-2xl mt-4 px-4 py-2 cursor-pointer ">Edit memo</a>
+                        </div>
                     </div>
                 <% }) %>
             <% } else { %>
