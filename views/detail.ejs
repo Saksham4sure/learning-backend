@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="w-screen min-h-screen bg-[#222222] text-[#eeeeee] p-10">
+        <a href="/" class="inline-block bg-[#eeeeee] text-[#222222] rounded-2xl mb-4 px-4 py-2">Go back</a>
+        <h1 class="text-3xl font-semibold capitalize"><%= filename.split(".")[0].split("-").join(" ") %></h1>
+        <p class="px-4 py-2 font-light "><%= filedata %></p>
+    </div>
+</body>
+
+</html>
