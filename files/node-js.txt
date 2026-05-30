@@ -1,1 +1,1 @@
-node js is a runtime environment which helps javascript to run outside the browser.
+Node js is a runtime environment

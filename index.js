@@ -38,9 +38,20 @@ app.get('/edit/:path', (req, res) => {
 })
 
 app.post('/edit', (req, res) => {
+    console.log(req.body)
+    if(req.body.new == "") {
+        return res.status(400).send("Cannot continue without empty name");
+    }
     fs.rename(`./files/${req.body.previous.split(" ").join("-")}.txt`, `./files/${req.body.new.split(" ").join("-")}.txt`, (err) => {
-        if (err) return;
+        if (err) {
+            console.log(err);
+            return;
+        }
         fs.writeFile(`./files/${req.body.new.split(" ").join("-")}.txt`, req.body.newDetails, (err) => {
+            if(err){
+                console.log(err)
+                return;
+            }
             res.redirect('/')
         })
     })
